@@ -29,8 +29,8 @@
 }
 
 #navbar__logo {
-    background-color: #ff8177;
-    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-color: #ffffff;
+    background-image: linear-gradient(to top, #858585 0%, #ffffff 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -97,7 +97,7 @@
 }
 
 .navbar__links:hover{
-    color: #f77062;
+    color: #858585;
     transition: all 0.3s ease;
 }
 
@@ -195,4 +195,3 @@
         transform: translateY(-8px) rotate(-45deg);
     }
 }
-

@@ -4,9 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEST LOTUS</title>
+    <script type="importmap">
+        {
+          "imports": {
+            "three/addons/": "https://unpkg.com/three@v0.163.0/examples/jsm/",
+            "three": "https://unpkg.com/three@v0.163.0/build/three.module.js"
+          }
+        }
+      </script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!--Navigation bar-->
     <nav class="navbar">
         <div class="navbar__container">
             <a href="/" id="navbar__logo">West Lotus</a>
@@ -25,6 +34,9 @@
             </ul>
         </div>
     </nav>
+
+    <!--3D T-Shirt-->
+    <script type="module" src="./main.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
