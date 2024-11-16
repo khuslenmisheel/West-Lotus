@@ -2,6 +2,14 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import * as THREE from 'three';
 
+const menu = document.querySelector('#mobile-menu')
+const menuLinks = document.querySelector('.navbar__menu')
+
+menu.addEventListener('click', function() {
+    menu.classList.toggle('is-active')
+    menuLinks.classList.toggle('active')
+})
+
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
@@ -11,7 +19,8 @@ renderer.setPixelRatio(window.devicePixelRatio);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-document.body.appendChild(renderer.domElement);
+const container = document.getElementById('shirt__container');
+container.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
 
