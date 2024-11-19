@@ -2,6 +2,10 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import * as THREE from 'three';
 
+//Our 3d object
+let mesh;
+
+//In charge of putting buttons into drop down menu
 const menu = document.querySelector('#mobile-menu')
 const menuLinks = document.querySelector('.navbar__menu')
 
@@ -10,6 +14,8 @@ menu.addEventListener('click', function() {
     menuLinks.classList.toggle('active')
 })
 
+
+//Renderers
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
@@ -48,7 +54,7 @@ scene.add(spotLight);
 const loader = new GLTFLoader().setPath('models/');
 loader.load('scene.gltf', (gltf) => {
   console.log('loading model');
-  const mesh = gltf.scene;
+  mesh = gltf.scene;
 
   mesh.traverse((child) => {
     if (child.isMesh) {
@@ -68,6 +74,17 @@ loader.load('scene.gltf', (gltf) => {
 });
 
 
+//In charge of changing color
+
+window.changeModelColor = function(color) {
+  if (mesh) {
+    mesh.traverse((child) => {
+      if (child.isMesh) {
+        child.material.color.set(color);
+      }
+    });
+  }
+};
 
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
