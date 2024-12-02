@@ -1,0 +1,2 @@
+﻿How to use: 
+Open the folder in Visual Studio code and open index.html with the live server option.
