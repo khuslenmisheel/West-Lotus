@@ -1,2 +1,5 @@
-﻿How to use: 
+How to use: 
 Open the folder in Visual Studio code and open index.html with the live server option.
+
+Currently working:
+Landing page, 3d Model, About us page, Links to social media, Navigation bar, Resizing features
